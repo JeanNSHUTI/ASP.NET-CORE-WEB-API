@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\bin\Debug\net6.0\Entities.deps.json
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\bin\Debug\net6.0\Entities.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\bin\Debug\net6.0\Entities.pdb
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\refint\Entities.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\Entities.pdb
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\Entities\obj\Debug\net6.0\ref\Entities.dll
