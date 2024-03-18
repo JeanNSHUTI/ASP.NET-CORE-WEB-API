@@ -58,12 +58,24 @@ namespace CompanyEmployees.Extensions
             return builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
         }
 
-        /*public static NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter(IServiceCollection services)
+        public static void AddCustomMediaTypes(this IServiceCollection services)
         {
-            return services.BuildServiceProvider()
-                           .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
-                           .OfType<NewtonsoftJsonPatchInputFormatter>()
-                           .First();
-        }*/
+            services.Configure<MvcOptions>(config =>
+            {
+                var systemTextJsonOutputFormater = config.OutputFormatters.OfType<SystemTextJsonOutputFormatter>()?.FirstOrDefault();
+
+                if (systemTextJsonOutputFormater != null)
+                {
+                    systemTextJsonOutputFormater.SupportedMediaTypes.Add("application/vnd.codemaze.hateoas+json");
+                }
+
+                var xmlOutputFormatter = config.OutputFormatters.OfType<XmlDataContractSerializerOutputFormatter>()?.FirstOrDefault();
+
+                if (xmlOutputFormatter != null)
+                {
+                    xmlOutputFormatter.SupportedMediaTypes.Add("application/vnd.codemaze.hateoas+xml");
+                }
+            }); 
+        }
     }
 }

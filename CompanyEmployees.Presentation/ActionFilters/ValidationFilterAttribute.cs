@@ -29,9 +29,7 @@ namespace CompanyEmployees.Presentation.ActionFilters
             {
                 filterContext.Result = new UnprocessableEntityObjectResult(filterContext.ModelState);
             }
-            {
-                
-            }
+
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext) { }
