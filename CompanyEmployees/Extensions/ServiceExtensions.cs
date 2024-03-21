@@ -8,6 +8,8 @@ using Microsoft.Extensions.Options;
 using Repository;
 using Service;
 using Service.Contracts;
+using Asp.Versioning;
+using CompanyEmployees.Presentation.Controllers;
 
 namespace CompanyEmployees.Extensions
 {
@@ -78,6 +80,23 @@ namespace CompanyEmployees.Extensions
                     xmlOutputFormatter.SupportedMediaTypes.Add("application/vnd.codemaze.apiroot+xml");
                 }
             }); 
+        }
+
+        public static void ConfigureVersioning(this IServiceCollection services)
+        {
+            services.AddApiVersioning(opt =>
+            {
+                opt.ReportApiVersions = true;
+                opt.AssumeDefaultVersionWhenUnspecified = true;
+                opt.DefaultApiVersion = new ApiVersion(1, 0);
+                //opt.ApiVersionReader = new QueryStringApiVersionReader("api-version");
+                opt.ApiVersionReader = new HeaderApiVersionReader("api-version");
+            })
+                .AddMvc( opt =>
+                {
+                    opt.Conventions.Controller<CompaniesController>().HasApiVersion(new ApiVersion(1, 0));
+                    opt.Conventions.Controller<CompaniesV2Controller>().HasDeprecatedApiVersion(new ApiVersion(2.0));
+                });
         }
     }
 }

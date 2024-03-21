@@ -91,3 +91,6 @@ C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployee
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Asp.Versioning.Abstractions.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Asp.Versioning.Http.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Asp.Versioning.Mvc.dll
