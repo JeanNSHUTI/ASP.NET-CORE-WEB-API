@@ -25,7 +25,7 @@ namespace CompanyEmployees.Presentation.Controllers
             _service = service;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetCompanies")]
         public async Task<IActionResult> GetCompanies([FromQuery] CompanyParameters companyParameters) 
         {
             var pagedResult = await _service.CompanyService.GetAllCompaniesAsync(companyParameters,trackChanges: false);
@@ -48,7 +48,7 @@ namespace CompanyEmployees.Presentation.Controllers
             return Ok(companies);
         }
 
-        [HttpPost]
+        [HttpPost(Name = "CreateCompany")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCompany([FromBody] CompanyForCreationDto company)
         {
@@ -105,7 +105,7 @@ namespace CompanyEmployees.Presentation.Controllers
             return NoContent();
         }
 
-        [HttpOptions]
+        [HttpOptions(Name = "GetCompaniesOptions")]
         public IActionResult GetCompaniesOptions()
         {
             Response.Headers.Add("Allow", "GET, OPTIONS, POST");
