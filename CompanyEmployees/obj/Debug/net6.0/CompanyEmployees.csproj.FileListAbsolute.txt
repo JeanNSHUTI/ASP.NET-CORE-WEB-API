@@ -98,3 +98,5 @@ C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployee
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\AspNetCoreRateLimit.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
