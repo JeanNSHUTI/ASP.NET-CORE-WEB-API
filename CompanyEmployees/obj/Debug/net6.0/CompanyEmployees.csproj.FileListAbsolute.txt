@@ -94,3 +94,7 @@ C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployee
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Asp.Versioning.Abstractions.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Asp.Versioning.Http.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Asp.Versioning.Mvc.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Marvin.Cache.Headers.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

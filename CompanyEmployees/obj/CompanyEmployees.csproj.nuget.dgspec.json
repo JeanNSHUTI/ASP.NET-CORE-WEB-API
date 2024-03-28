@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[6.4.1, )"
             },
+            "Marvin.Cache.Headers": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
