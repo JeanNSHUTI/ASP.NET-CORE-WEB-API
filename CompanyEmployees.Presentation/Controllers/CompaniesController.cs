@@ -29,6 +29,7 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpGet(Name = "GetCompanies")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetCompanies([FromQuery] CompanyParameters companyParameters) 
         {
             var pagedResult = await _service.CompanyService.GetAllCompaniesAsync(companyParameters,trackChanges: false);
