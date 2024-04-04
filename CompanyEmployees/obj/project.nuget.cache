@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XfMZF3Jo+rDGAKeAQkA3n309+UMxAggRcBBJdDXu+YzJn1XbK/rCovnHygpedc2NPqezAoJoJkIkbOwJRk3mKQ==",
+  "dgSpecHash": "BkMn7mnnz75EvD25mpptOYam5fKFWNpG7aWp5AgomGIbkBPnc1jLaEL+CBa47eZ9OsLYvmp9/SSHUfCeGbFAZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\Personal projects .NET\\CompanyEmployees\\CompanyEmployees\\CompanyEmployees.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.1.0\\microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
