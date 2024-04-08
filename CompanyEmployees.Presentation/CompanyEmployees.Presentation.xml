@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CompanyEmployees.Presentation</name>
+    </assembly>
+    <members>
+        <member name="M:CompanyEmployees.Presentation.Controllers.AuthenticationController.RegisterUser(Shared.DataTransferObjects.UserForRegistrationDto)">
+            <summary>
+            Creates a new valid API user with role
+            </summary>
+            <param name="userForRegistration">valid user</param>
+            <returns></returns>
+            <response code="201">OK</response> 
+            <response code="400">If the item is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.AuthenticationController.Authenticate(Shared.DataTransferObjects.UserForAuthenticationDto)">
+            <summary>
+            authorize user with email and password
+            </summary>
+            <param name="user">username and password</param>
+            <returns>Access and refresh tokens</returns>
+            <response code="401">Unauthaurized</response>
+            <response code="200">Authorized</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.GetCompanies(Shared.RequestFeatures.CompanyParameters)">
+            <summary>
+            Gets the list of all companies
+            </summary>
+            <returns>The companies list</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.GetCompany(System.Guid)">
+            <summary>
+            Gets a specific company from the database
+            </summary>
+            <returns>A company dto</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.GetCompanyCollection(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Gets a collection of companies based on a list of given IDs
+            </summary>
+            <param name="ids"></param>
+            <returns>The list of companies with corresponding ids</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto)">
+            <summary>
+            Creates a newly created company 
+            </summary>
+            <param name="company"></param> 
+            <returns>A newly created company</returns> 
+            <response code="201">Returns the newly created item</response> 
+            <response code="400">If the item is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.CreateCompanyCollection(System.Collections.Generic.IEnumerable{Shared.DataTransferObjects.CompanyForCreationDto})">
+            <summary>
+            Creates a group of newly created company 
+            </summary>
+            <param name="companyCollection"></param> 
+            <returns>A newly created company</returns> 
+            <response code="201">Returns the newly created company items</response> 
+            <response code="400">If the item is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.DeleteCompany(System.Guid)">
+            <summary>
+            Deletes a company
+            </summary>
+            <param name="id"></param>
+            <returns>No content</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.UpdateCompany(System.Guid,Shared.DataTransferObjects.CompanyForUpdateDto)">
+            <summary>
+            Updates a company in the database
+            </summary>
+            <param name="id"></param>
+            <param name="company">update company values</param>
+            <returns></returns>
+            <response code="204">Successfuly executed</response>
+            <response code="400">If the model is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.PartiallyUpdateCompany(System.Guid,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{Shared.DataTransferObjects.CompanyForUpdateDto})">
+            <summary>
+            Update company fields with patch document commands
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocForCompany"></param>
+            <returns>No content</returns>
+            <response code="204">Successfuly executed</response>
+            <response code="400">If the patch document was not successfully parsed and is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesController.GetCompaniesOptions">
+            <summary>
+            Get possible http requests for company entity
+            </summary>
+            <returns>list of possible http requests</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.CompaniesV2Controller.GetCompanies(Shared.RequestFeatures.CompanyParameters)">
+            <summary>
+            Get a list of all companies
+            </summary>
+            <param name="companyParameters"></param>
+            <returns>List of companies in database</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.EmployeesController.GetEmployeesForCompany(System.Guid,Shared.RequestFeatures.EmployeeParameters)">
+            <summary>
+            Get a list of employees for a specific company
+            </summary>
+            <param name="companyId">id of specific company</param>
+            <param name="employeeParameters"> min age, max age, search term</param>
+            <returns>list of employees</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.EmployeesController.GetEmployeeForCompany(System.Guid,System.Guid)">
+            <summary>
+            Get a specific employee from a specific company
+            </summary>
+            <param name="companyId">company id</param>
+            <param name="id">employee id</param>
+            <returns>employee</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany(System.Guid,Shared.DataTransferObjects.EmployeeForCreationDto)">
+            <summary>
+            Creates a new employee for a company
+            </summary>
+            <param name="companyId">company id</param>
+            <param name="employee">valid employee</param>
+            <returns></returns>
+            <response code="201"> Returns the newly created employee item</response>
+            <response code="400"> If the item is null</response>
+            <response code="422"> If the model is null</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany(System.Guid,System.Guid)">
+            <summary>
+            Delete an employee for a specific company
+            </summary>
+            <param name="companyId">company id</param>
+            <param name="id">employee id to delete</param>
+            <returns>no content</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.EmployeesController.UpdateEmployeeForCompany(System.Guid,System.Guid,Shared.DataTransferObjects.EmployeeForUpdateDto)">
+            <summary>
+            Full update of specific employee for a specific company
+            </summary>
+            <param name="companyId">company id</param>
+            <param name="id">employee id to update</param>
+            <param name="employee">valid emplyee model</param>
+            <returns>No content</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.EmployeesController.PartiallyUpdateEmployeeForCompany(System.Guid,System.Guid,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{Shared.DataTransferObjects.EmployeeForUpdateDto})">
+            <summary>
+            Partially update employee for a specific company
+            </summary>
+            <param name="companyId">company id</param>
+            <param name="id">employee id to partially update</param>
+            <param name="patchDocForEmployee">valid patch document with update commands</param>
+            <returns>no content</returns>
+            <response code="400">Invalid patch document, is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.RootController.GetRoot(System.String)">
+            <summary>
+            Gets a list of all available http requests for this API on root level
+            </summary>
+            <param name="mediaType">From Accept header : application/vnd.codemaze.apiroot </param>
+            <returns>list of accepted http requests on top level entities</returns>
+        </member>
+        <member name="M:CompanyEmployees.Presentation.Controllers.TokenController.Refresh(Shared.DataTransferObjects.TokenDto)">
+            <summary>
+            Use to refresh access token for authorization
+            </summary>
+            <param name="tokenDto">old access and refresh tokens</param>
+            <returns>New token dto with access and refresh token </returns>
+        </member>
+    </members>
+</doc>

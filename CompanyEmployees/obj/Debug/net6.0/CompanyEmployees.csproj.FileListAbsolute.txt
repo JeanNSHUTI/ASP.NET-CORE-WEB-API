@@ -107,3 +107,8 @@ C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployee
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\CompanyEmployees.Presentation.xml

@@ -69,6 +69,8 @@ builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.AddJwtConfiguration(builder.Configuration);
 
+builder.Services.ConfigureSwagger();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -94,6 +96,13 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSwagger();
+app.UseSwaggerUI(s =>
+{
+    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Code Maze API v1");
+    s.SwaggerEndpoint("/swagger/v2/swagger.json", "Code Maze API v2");
+});
 
 app.MapControllers();
 

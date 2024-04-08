@@ -19,6 +19,7 @@ namespace CompanyEmployees.Presentation.Controllers
 {
     [Route("api/companies")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class CompaniesController : ControllerBase
     {
         private readonly IServiceManager _service;
@@ -28,6 +29,10 @@ namespace CompanyEmployees.Presentation.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Gets the list of all companies
+        /// </summary>
+        /// <returns>The companies list</returns>
         [HttpGet(Name = "GetCompanies")]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetCompanies([FromQuery] CompanyParameters companyParameters) 
@@ -38,6 +43,10 @@ namespace CompanyEmployees.Presentation.Controllers
             return Ok(pagedResult.companies);
         }
 
+        /// <summary>
+        /// Gets a specific company from the database
+        /// </summary>
+        /// <returns>A company dto</returns>
         [HttpGet("{id:guid}", Name = "CompanyById")]
         [HttpCacheExpiration(CacheLocation = CacheLocation.Public, MaxAge = 60)]
         [HttpCacheValidation(MustRevalidate = false)]
@@ -47,6 +56,11 @@ namespace CompanyEmployees.Presentation.Controllers
             return Ok(company);
         }
 
+        /// <summary>
+        /// Gets a collection of companies based on a list of given IDs
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns>The list of companies with corresponding ids</returns>
         [HttpGet("collection/({ids})", Name = "CompanyCollection")]
         public async Task<IActionResult> GetCompanyCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))]IEnumerable<Guid> ids) 
         {
@@ -54,7 +68,18 @@ namespace CompanyEmployees.Presentation.Controllers
             return Ok(companies);
         }
 
+        /// <summary>
+        /// Creates a newly created company 
+        /// </summary>
+        /// <param name="company"></param> 
+        /// <returns>A newly created company</returns> 
+        /// <response code="201">Returns the newly created item</response> 
+        /// <response code="400">If the item is null</response>
+        /// <response code="422">If the model is invalid</response>
         [HttpPost(Name = "CreateCompany")]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCompany([FromBody] CompanyForCreationDto company)
         {
@@ -63,7 +88,18 @@ namespace CompanyEmployees.Presentation.Controllers
             return CreatedAtRoute("CompanyById", new { id = createdCompany.Id }, createdCompany);
         }
 
+        /// <summary>
+        /// Creates a group of newly created company 
+        /// </summary>
+        /// <param name="companyCollection"></param> 
+        /// <returns>A newly created company</returns> 
+        /// <response code="201">Returns the newly created company items</response> 
+        /// <response code="400">If the item is null</response>
+        /// <response code="422">If the model is invalid</response>
         [HttpPost("collection")]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
         public async Task<IActionResult> CreateCompanyCollection([FromBody] IEnumerable<CompanyForCreationDto> companyCollection)
         {
             var result = await _service.CompanyService.CreateCompanyCollectionAsync(companyCollection);
@@ -71,6 +107,11 @@ namespace CompanyEmployees.Presentation.Controllers
             return CreatedAtRoute("CompanyCollection", new { result.ids }, result.companies);
         }
 
+        /// <summary>
+        /// Deletes a company
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>No content</returns>
         [HttpDelete("{id:guid}")]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteCompany(Guid id)
@@ -79,7 +120,19 @@ namespace CompanyEmployees.Presentation.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Updates a company in the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="company">update company values</param>
+        /// <returns></returns>
+        /// <response code="204">Successfuly executed</response>
+        /// <response code="400">If the model is null</response>
+        /// <response code="422">If the model is invalid</response>
         [HttpPut("{id:guid}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateCompany(Guid id, [FromBody] CompanyForUpdateDto company)
         {
@@ -88,7 +141,19 @@ namespace CompanyEmployees.Presentation.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Update company fields with patch document commands
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="patchDocForCompany"></param>
+        /// <returns>No content</returns>
+        /// <response code="204">Successfuly executed</response>
+        /// <response code="400">If the patch document was not successfully parsed and is null</response>
+        /// <response code="422">If the model is invalid</response>
         [HttpPatch("{id:guid}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
         public async Task<IActionResult> PartiallyUpdateCompany(Guid id, [FromBody] JsonPatchDocument<CompanyForUpdateDto> patchDocForCompany)
         {
             if (patchDocForCompany is null)
@@ -112,6 +177,10 @@ namespace CompanyEmployees.Presentation.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Get possible http requests for company entity
+        /// </summary>
+        /// <returns>list of possible http requests</returns>
         [HttpOptions(Name = "GetCompaniesOptions")]
         public IActionResult GetCompaniesOptions()
         {

@@ -21,6 +21,11 @@ namespace CompanyEmployees.Presentation.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Use to refresh access token for authorization
+        /// </summary>
+        /// <param name="tokenDto">old access and refresh tokens</param>
+        /// <returns>New token dto with access and refresh token </returns>
         [HttpPost("refresh")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> Refresh([FromBody]TokenDto tokenDto)

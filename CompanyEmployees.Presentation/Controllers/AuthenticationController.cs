@@ -21,7 +21,18 @@ namespace CompanyEmployees.Presentation.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Creates a new valid API user with role
+        /// </summary>
+        /// <param name="userForRegistration">valid user</param>
+        /// <returns></returns>
+        /// <response code="201">OK</response> 
+        /// <response code="400">If the item is null</response>
+        /// <response code="422">If the model is invalid</response>
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration) 
         {
@@ -39,7 +50,16 @@ namespace CompanyEmployees.Presentation.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// authorize user with email and password
+        /// </summary>
+        /// <param name="user">username and password</param>
+        /// <returns>Access and refresh tokens</returns>
+        /// <response code="401">Unauthaurized</response>
+        /// <response code="200">Authorized</response>
         [HttpPost("login")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(401)]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
         {

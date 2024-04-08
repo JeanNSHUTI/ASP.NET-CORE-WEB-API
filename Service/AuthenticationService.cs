@@ -21,7 +21,7 @@ namespace Service
         private readonly ILoggerManager _logger;
         private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
-        private readonly IConfiguration _config;
+        private readonly IOptions<JwtConfiguration> _configuration;
         private readonly JwtConfiguration _jwtConfiguration;
 
         private User? _user;
@@ -31,9 +31,8 @@ namespace Service
             _logger = logger;
             _mapper = mapper;
             _userManager = userManager;
-            _config = config;
-            _jwtConfiguration = new JwtConfiguration();
-            _config.Bind(_jwtConfiguration.Section, _jwtConfiguration);
+            _configuration = config;
+            _jwtConfiguration = _configuration.Value;
         }
 
         public async Task<IdentityResult> RegisterUser(UserForRegistrationDto userForRegistration) 

@@ -20,6 +20,11 @@ namespace CompanyEmployees.Presentation.Controllers
             _linkGenerator = linkGenerator;
         }
 
+        /// <summary>
+        /// Gets a list of all available http requests for this API on root level
+        /// </summary>
+        /// <param name="mediaType">From Accept header : application/vnd.codemaze.apiroot </param>
+        /// <returns>list of accepted http requests on top level entities</returns>
         [HttpGet(Name = "GetRoot")]
         public IActionResult GetRoot([FromHeader(Name = "Accept")] string mediaType)
         {

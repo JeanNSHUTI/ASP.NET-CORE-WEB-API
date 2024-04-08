@@ -19,3 +19,4 @@ C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployee
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees.Presentation\obj\Debug\net6.0\refint\CompanyEmployees.Presentation.dll
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees.Presentation\obj\Debug\net6.0\CompanyEmployees.Presentation.pdb
 C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees.Presentation\obj\Debug\net6.0\ref\CompanyEmployees.Presentation.dll
+C:\Users\Admin\Documents\Personal projects .NET\CompanyEmployees\CompanyEmployees.Presentation\bin\Debug\net6.0\CompanyEmployees.Presentation.xml
